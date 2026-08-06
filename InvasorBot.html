@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabajo en progreso</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html, body{
+    min-height:100%;
+}
+
+body{
+    background:#000;
+    color:white;
+    text-align:center;
+    position:relative;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("FillImage.png") repeat;
+    background-size:600px 600px;
+    opacity:.10;
+    z-index:-1;
+}
+
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.container{
+    max-width:700px;
+    width:100%;
+}
+
+.container img{
+    width:min(300px,80vw);
+    height:auto;
+    margin-bottom:30px;
+    filter:drop-shadow(0 0 30px rgba(255,255,255,.15));
+}
+
+.container h1{
+    font-size:52px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.container p{
+    font-size:20px;
+    opacity:.75;
+    margin-bottom:35px;
+}
+
+.back-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    backdrop-filter:blur(10px);
+    transition:.25s ease;
+}
+
+.back-btn:hover{
+    background:rgba(255,255,255,.14);
+    transform:translateY(-3px);
+}
+
+@media (max-width:768px){
+
+    .wrapper{
+        align-items:flex-start;
+        padding-top:50px;
+        padding-bottom:80px;
+    }
+
+    .container img{
+        width:min(220px,75vw);
+    }
+
+    .container h1{
+        font-size:34px;
+    }
+
+    .container p{
+        font-size:16px;
+    }
+
+    .back-btn{
+        padding:12px 22px;
+        font-size:15px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+
+```
+<div class="container">
+
+    <img src="wip.png" alt="Trabajo en progreso">
+
+    <h1>No deberías estar aquí aún</h1>
+
+    <p>
+        Esta sección sigue en desarrollo.<br>
+        Vuelve más tarde para descubrir lo que estoy preparando.
+    </p>
+
+    <a href="portfolio.html" class="back-btn">
+        ← Volver al portfolio
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>

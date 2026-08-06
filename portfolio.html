@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.back-btn {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+
+  padding: 12px 22px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  color: white;
+  text-decoration: none;
+
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
+
+  z-index: 2000;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-2px);
+}
+body {
+  position: relative;
+  background: #000;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* textura encima del negro */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("FillImage.png") repeat;
+  background-size: 600px 600px;
+
+  opacity: 0.10;
+
+  z-index: -1;
+}
+
+/* ===== PERFIL ===== */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+/* FOTO MÁS GRANDE */
+.left img {
+  width: 553px;
+  height: 819px;
+  object-fit: cover;
+  border-radius: 0px; /* o simplemente elimina esta línea */
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+
+/* TEXTO */
+.right h1 {
+  font-size: 100px;
+}
+
+.right h2 {
+  font-size: 30px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.right p {
+  font-size: 20px;
+  opacity: 0.85;
+  line-height: 2.6;
+}
+
+.right {
+  max-width: 950px; /* ajusta este valor a gusto */
+}
+
+/* ===== GRID PROYECTOS ===== */
+.projects {
+  padding: 10px 8%;
+  columns: 3;
+  column-gap: 25px;
+
+  /* 🔥 auto adaptativo tipo portfolio moderno */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
+.project {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+}
+
+/* PORTADA */
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* TEXTO */
+.project-text {
+  padding: 15px;
+}
+
+.project-text h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.project-text p {
+  font-size: 14px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+/* ===== TITULO PROYECTOS ===== */
+.projects-title {
+  padding: 40px 8% 10px;
+  text-align: center;
+}
+
+.projects-title h2 {
+  font-size: 60px;
+  font-weight: 700;
+  color: white;
+}
+
+.modal-box {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  text-align: center;
+}
+
+#mainImg {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+.project-link {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.project-link a {
+  color: white;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.project-link a:hover {
+  opacity: 1;
+}
+.prev { left: -60px; }
+.next { right: -60px; }
+
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* ========================= */
+/* RESPONSIVE MOVIL */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .back-btn {
+    top: 15px;
+    left: 15px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 90px 20px 40px;
+  }
+
+  .container {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+
+  .left img {
+    width: 180px;
+    height: 360px;
+    object-fit: cover;
+  }
+
+}
+
+  .right {
+    max-width: 100%;
+  }
+
+  .right h1 {
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .right h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .right p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .projects-title h2 {
+    font-size: 42px;
+  }
+
+  /* Masonry de 1 columna */
+  .projects {
+    columns: 1;
+    padding: 20px;
+  }
+
+  .project {
+    margin-bottom: 20px;
+  }
+
+  .modal-box {
+    width: 95%;
+  }
+
+  #mainImg {
+    max-height: 300px;
+  }
+
+  .modal-text h2 {
+    font-size: 22px;
+  }
+
+  .modal-text p {
+    font-size: 14px;
+  }
+
+  .nav {
+    font-size: 28px;
+  }
+
+  .prev {
+    left: -10px;
+  }
+
+  .next {
+    right: -10px;
+  }
+
+  .close {
+    top: -45px;
+    right: 10px;
+  }
+}
+.modal-text {
+  margin-top: 20px;
+}
+
+.modal-text h2 {
+  font-size: 28px;
+}
+
+.modal-text p {
+  opacity: 0.85;
+}
+</style>
+
+
+</head>
+<body>
+<a href="index.html" class="back-btn">← Volver</a>
+<!-- PERFIL -->
+<section class="hero">
+  <div class="container">
+
+    <div class="left">
+      <img src="me.png">
+    </div>
+
+    <div class="right">
+      <h1>Deimor</h1>
+      <h2>Game developer</h2>
+      <p>Desarrollador especializado en Unity y Roblox Studio</p>
+      <p>Creador y editor de videos</p>
+      <p>Experiencia en produccion musical</p>
+      <p>15 años</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TITULO PROYECTOS -->
+<section class="projects-title">
+  <h2>Proyectos</h2>
+</section>
+
+<!-- PROYECTOS GRID -->
+<section class="projects">
+
+
+  <div class="project" onclick="openModal(1)">
+    <img src="project1.png">
+    <div class="project-text">
+      <h3>El viaje del Memedroider</h3>
+      <p>2024</p>
+    </div>
+  </div>
+
+  <div class="project" onclick="openModal(2)">
+    <img src="project2.png">
+    <div class="project-text">
+      <h3>Invasor Bot</h3>
+      <p>2026</p>
+    </div>
+  </div>
+
+  <div class="project" onclick="openModal(3)">
+    <img src="project3.jpg">
+    <div class="project-text">
+      <h3>World Penguin</h3>
+      <p>2025</p>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- MODAL (igual que antes) -->
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <div class="close" onclick="closeModal()">✖</div>
+
+    <div class="nav prev" onclick="change(-1)">❮</div>
+    <div class="nav next" onclick="change(1)">❯</div>
+
+    <img id="mainImg">
+
+<div class="modal-text">
+  <h2 id="title"></h2>
+  <p id="desc"></p>
+
+<p class="project-link">
+  Lo encontrarás en
+  <a id="projectLink" target="_blank"></a>
+</p>
+</div>
+
+  </div>
+
+</div>
+
+<script>
+let current = 0;
+let data = null;
+
+
+const projects = {
+  1: {
+    title: "El viaje del Memedroider",
+    desc: "Un videojuego realizado para la pagina web Memedroid desarrollado en Clickteam Fusion 2.5 en el año 2024",
+    platform: "Itch.io",
+    link: "https://deimordev.itch.io/el-viaje-del-memedroider-club",
+    images: ["meme1.png","meme2.png","meme3.png","meme4.png"]
+  },
+
+  2: {
+    title: "Invasor Bot",
+    desc: "Un proyecto ambicioso basado en un mundo apocaliptico...",
+    platform: "Devlogs",
+    link: "InvasorBot.html",
+    images: ["invasor1.png","invasor2.png","invasor3.png","invasor4.png"]
+  },
+
+  3: {
+    title: "World Penguin",
+    desc: "Un remake de Club Penguin hecho en Roblox Studio para Roblox",
+    platform: "Roblox",
+    link: "https://www.roblox.com/es/games/102118121976797/World-Penguin",
+    images: ["penguin.png","penguin1.png","penguin2.png","penguin3.png"]
+  }
+};
+
+
+function openModal(id) {
+  data = projects[id];
+  current = 0;
+
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("title").innerText = data.title;
+  document.getElementById("desc").innerText = data.desc;
+
+  const link = document.getElementById("projectLink");
+  link.href = data.link;
+  link.innerText = data.platform;
+
+  update();
+}
+
+
+
+function update() {
+  document.getElementById("mainImg").src = data.images[current];
+}
+
+function change(dir) {
+  current += dir;
+  if (current < 0) current = data.images.length - 1;
+  if (current >= data.images.length) current = 0;
+  update();
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

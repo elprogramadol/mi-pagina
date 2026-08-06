@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deimor | Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("FillImage.png") repeat;
+    background-size:600px 600px;
+    opacity:.10;
+    z-index:-1;
+}
+
+.back-btn{
+    position:fixed;
+    top:25px;
+    left:25px;
+    padding:12px 22px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    backdrop-filter:blur(10px);
+    transition:.25s;
+    z-index:999;
+}
+
+.back-btn:hover{
+    background:rgba(255,255,255,.14);
+    transform:translateY(-2px);
+}
+
+.hero{
+    text-align:center;
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+.link-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+
+.link-icon{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.link-header h2{
+    margin:0;
+    font-size:24px;
+}
+
+.hero img{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    object-position:center 20%;
+    border-radius:50%;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-top:20px;
+}
+
+.hero p{
+    opacity:.75;
+    font-size:18px;
+}
+
+.links{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding-bottom:80px;
+}
+
+.link-card{
+    text-decoration:none;
+    color:white;
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:22px;
+    padding:25px;
+
+    transition:.25s;
+    backdrop-filter:blur(10px);
+}
+
+.link-card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,.08);
+}
+
+.link-card h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.link-card p{
+    opacity:.7;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">← Volver</a>
+
+<section class="hero">
+    <img src="me.png">
+    <h1>Deimor</h1>
+    <p>Todas mis redes, proyectos y música</p>
+</section>
+
+<section class="links">
+
+    <a class="link-card" href="https://www.youtube.com/@Deimorgx" target="_blank">
+        <div class="link-header">
+            <img src="youtube.png" class="link-icon">
+            <h2>YouTube</h2>
+        </div>
+        <p>Videos, desarrollo y contenido.</p>
+    </a>
+
+    <a class="link-card" href="https://discord.com/invite/kbxeYrD5Cj" target="_blank">
+        <div class="link-header">
+            <img src="discord.png" class="link-icon">
+            <h2>Discord</h2>
+        </div>
+        <p>Únete a la comunidad.</p>
+    </a>
+
+    <a class="link-card" href="https://www.instagram.com/deimorgx" target="_blank">
+        <div class="link-header">
+            <img src="instagram.png" class="link-icon">
+            <h2>Instagram</h2>
+        </div>
+        <p>Fotos, historias y actualizaciones.</p>
+    </a>
+
+    <a class="link-card" href="https://open.spotify.com/intl-es/artist/6w3wiqxYMP1Zvlx5d11MSf" target="_blank">
+        <div class="link-header">
+            <img src="spotify.png" class="link-icon">
+            <h2>Spotify</h2>
+        </div>
+        <p>Mi música en Spotify.</p>
+    </a>
+
+    <a class="link-card" href="https://www.tiktok.com/@deimor_vyl" target="_blank">
+        <div class="link-header">
+            <img src="tiktok.png" class="link-icon">
+            <h2>TikTok</h2>
+        </div>
+        <p>Clips, música y contenido corto.</p>
+    </a>
+
+    <a class="link-card" href="https://deimordev.itch.io/" target="_blank">
+        <div class="link-header">
+            <img src="itchio.png" class="link-icon">
+            <h2>Itch.io</h2>
+        </div>
+        <p>Juegos y proyectos independientes.</p>
+    </a>
+
+    <a class="link-card" href="https://gamejolt.com/@DeimorDev" target="_blank">
+        <div class="link-header">
+            <img src="gamejolt.png" class="link-icon">
+            <h2>GameJolt</h2>
+        </div>
+        <p>Publicaciones y videojuegos.</p>
+    </a>
+
+    <a class="link-card" href="https://soundcloud.com/deimor_vyl" target="_blank">
+        <div class="link-header">
+            <img src="soundcloud.png" class="link-icon">
+            <h2>SoundCloud</h2>
+        </div>
+        <p>Tracks, demos y lanzamientos.</p>
+    </a>
+
+</section>
+
+</section>
+
+</body>
+</html>
+```
